@@ -57,46 +57,46 @@ jobs:
           # - iOS # Build an iOS project.
           #- Android # Build an Android .apk.
           - WebGL # WebGL.
-        buildWithIl2cpp:
-          - false
-          - true
-        additionalParameters:
-          - -param value
+        # buildWithIl2cpp:
+          # - false
+          # - true
+        # additionalParameters:
+          # - -param value
           # - -standaloneBuildSubtarget Server
         # Skipping configurations that are not supported
-        exclude:
+        # exclude:
           # No il2cpp support on Linux Host
-          - targetPlatform: StandaloneOSX
-            buildWithIl2cpp: true
-          - targetPlatform: StandaloneWindows64
-            buildWithIl2cpp: true
+          # - targetPlatform: StandaloneOSX
+            # buildWithIl2cpp: true
+          # - targetPlatform: StandaloneWindows64
+            # buildWithIl2cpp: true
           # Only builds with Il2cpp
-          - targetPlatform: iOS
-            buildWithIl2cpp: false
-          - targetPlatform: Android
-            buildWithIl2cpp: false
-          - targetPlatform: WebGL
-            buildWithIl2cpp: false
+          # - targetPlatform: iOS
+            # buildWithIl2cpp: false
+          # - targetPlatform: Android
+            # buildWithIl2cpp: false
+          # - targetPlatform: WebGL
+            # buildWithIl2cpp: false
           # No dedicated server support
-          - targetPlatform: WebGL
-            additionalParameters: -standaloneBuildSubtarget Server
-          - targetPlatform: Android
-            additionalParameters: -standaloneBuildSubtarget Server
-          - targetPlatform: iOS
-            additionalParameters: -standaloneBuildSubtarget Server
+          # - targetPlatform: WebGL
+            # additionalParameters: -standaloneBuildSubtarget Server
+          # - targetPlatform: Android
+            # additionalParameters: -standaloneBuildSubtarget Server
+          # - targetPlatform: iOS
+            # additionalParameters: -standaloneBuildSubtarget Server
           # No dedicated server support on Linux Host
-          - targetPlatform: StandaloneOSX
-            additionalParameters: -standaloneBuildSubtarget Server
+          # - targetPlatform: StandaloneOSX
+            # additionalParameters: -standaloneBuildSubtarget Server
           # No il2cpp dedicated server support on Linux Host
-          - targetPlatform: StandaloneWindows64
-            additionalParameters: -standaloneBuildSubtarget Server
-            buildWithIl2cpp: true
+          # - targetPlatform: StandaloneWindows64
+            # additionalParameters: -standaloneBuildSubtarget Server
+            # buildWithIl2cpp: true
 
     steps:      
 
-      - name: Clear Space for Android Build
-        if: matrix.targetPlatform == 'Android'
-        uses: jlumbroso/free-disk-space@v1.3.1
+      # - name: Clear Space for Android Build
+        # if: matrix.targetPlatform == 'Android'
+        # uses: jlumbroso/free-disk-space@v1.3.1
 
       ###########################
       #         Checkout        #
@@ -126,10 +126,10 @@ jobs:
       ###########################
       #  Set Scripting Backend  #
       ###########################
-      - name: Set Scripting Backend To il2cpp
-        if: matrix.buildWithIl2cpp == true
-        run: |
-          mv -f "./test-project/ProjectSettings/ProjectSettingsIl2cpp.asset" "./test-project/ProjectSettings/ProjectSettings.asset"
+      # - name: Set Scripting Backend To il2cpp
+        # if: matrix.buildWithIl2cpp == true
+        # run: |
+          # mv -f "./ProjectSettings/ProjectSettingsIl2cpp.asset" "./ProjectSettings/ProjectSettings.asset"
 
       ###########################
       #          Build          #
