@@ -40,7 +40,7 @@ namespace Examples.Player.JSON
 
         private void Awake()
         {
-            //Get_Player_Data_JSON();
+            Get_Player_Data_JSON();
         }
 
 
@@ -51,6 +51,8 @@ namespace Examples.Player.JSON
             _gold.text = "GOLD: " + _saveData.Gold;
             _level.text = "LEVEL: " + _saveData.Level;
             _vip.isOn = _saveData.VIP;
+            //
+            Debug.Log(JsonUtility.ToJson(_saveData));
         }
 
 
