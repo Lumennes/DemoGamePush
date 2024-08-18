@@ -41,9 +41,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        providerStrategy:
+        # providerStrategy:
           # - local-docker
-          - local
+          # - local
         #projectPath:
         #  - test-project
         #unityVersion:
@@ -146,8 +146,8 @@ jobs:
           #projectPath: ${{ matrix.projectPath }}
           #unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
-          customParameters: -profile SomeProfile -someBoolean -someValue exampleValue ${{ matrix.additionalParameters }}
-          providerStrategy: ${{ matrix.providerStrategy }}
+          # customParameters: -profile SomeProfile -someBoolean -someValue exampleValue ${{ matrix.additionalParameters }}
+          # providerStrategy: ${{ matrix.providerStrategy }}
           allowDirtyBuild: true
 
       - name: Sleep for Retry
@@ -168,8 +168,8 @@ jobs:
           #projectPath: ${{ matrix.projectPath }}
           #unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
-          customParameters: -profile SomeProfile -someBoolean -someValue exampleValue ${{ matrix.additionalParameters }}
-          providerStrategy: ${{ matrix.providerStrategy }}
+          # customParameters: -profile SomeProfile -someBoolean -someValue exampleValue ${{ matrix.additionalParameters }}
+          # providerStrategy: ${{ matrix.providerStrategy }}
           allowDirtyBuild: true
 
       - name: Sleep for Retry
@@ -189,8 +189,8 @@ jobs:
           #projectPath: ${{ matrix.projectPath }}
           #unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
-          customParameters: -profile SomeProfile -someBoolean -someValue exampleValue ${{ matrix.additionalParameters }}
-          providerStrategy: ${{ matrix.providerStrategy }}
+          # customParameters: -profile SomeProfile -someBoolean -someValue exampleValue ${{ matrix.additionalParameters }}
+          # providerStrategy: ${{ matrix.providerStrategy }}
           allowDirtyBuild: true
 
       ###########################
